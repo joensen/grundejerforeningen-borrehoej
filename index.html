@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grundejerforeningen Borrehøj</title>
+    <script>
+        // Fetch aktiviteter.html and parse the event date to determine redirect
+        fetch('aktiviteter.html')
+            .then(response => response.text())
+            .then(html => {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, 'text/html');
+                var dateText = doc.querySelector('.event-date').textContent;
+
+                var months = {
+                    'januar': 0, 'februar': 1, 'marts': 2, 'april': 3,
+                    'maj': 4, 'juni': 5, 'juli': 6, 'august': 7,
+                    'september': 8, 'oktober': 9, 'november': 10, 'december': 11
+                };
+
+                var match = dateText.match(/(\d+)\.\s*(\w+)\s*(\d{4})/);
+                if (match) {
+                    var day = parseInt(match[1]);
+                    var month = months[match[2].toLowerCase()];
+                    var year = parseInt(match[3]);
+                    var eventDate = new Date(year, month, day);
+                    eventDate.setDate(eventDate.getDate() + 1); // One day after
+                    var today = new Date();
+                    today.setHours(0, 0, 0, 0);
+
+                    if (today > eventDate) {
+                        window.location.replace('kontakt.html');
+                    } else {
+                        window.location.replace('aktiviteter.html');
+                    }
+                } else {
+                    window.location.replace('kontakt.html');
+                }
+            })
+            .catch(() => {
+                window.location.replace('kontakt.html');
+            });
+    </script>
+</head>
+<body>
+</body>
+</html>
