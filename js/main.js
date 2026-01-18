@@ -41,4 +41,28 @@ $(document).ready(function() {
 
     // Update copyright year
     $('#copyright-year').text(new Date().getFullYear());
+
+    // Check if event has passed and show message
+    var eventDateText = $('.event-date').text();
+    if (eventDateText) {
+        var months = {
+            'januar': 0, 'februar': 1, 'marts': 2, 'april': 3,
+            'maj': 4, 'juni': 5, 'juli': 6, 'august': 7,
+            'september': 8, 'oktober': 9, 'november': 10, 'december': 11
+        };
+        var match = eventDateText.match(/(\d+)\.\s*(\w+)\s*(\d{4})/);
+        if (match) {
+            var day = parseInt(match[1]);
+            var month = months[match[2].toLowerCase()];
+            var year = parseInt(match[3]);
+            var eventDate = new Date(year, month, day);
+            eventDate.setDate(eventDate.getDate() + 1);
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+            if (today > eventDate) {
+                $('.event-passed').show();
+                $('.event-date').addClass('passed');
+            }
+        }
+    }
 });

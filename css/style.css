@@ -252,11 +252,20 @@ article:last-child {
     font-weight: 700;
 }
 
+.event-date.passed {
+    text-decoration: line-through;
+}
+
+.event-passed {
+    color: #888;
+    font-style: italic;
+}
+
 .entry-content {
     font-size: 1rem;
     line-height: 1.2;
-    width: 40%;
-    min-width: 400px;
+    width: 60%;
+    min-width: 300px;
     text-align: justify;
 }
 
@@ -533,5 +542,10 @@ article:last-child {
 
     .featured-image-placeholder {
         height: 200px;
+    }
+
+    .contact-email a {
+        display: block;
+        margin-top: 5px;
     }
 }

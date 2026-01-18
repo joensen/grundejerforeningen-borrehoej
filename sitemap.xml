@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.grundejerforeningen-borrehøj.dk/aktiviteter.html</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.grundejerforeningen-borrehøj.dk/dokumenter.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.grundejerforeningen-borrehøj.dk/kontakt.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.grundejerforeningen-borrehøj.dk/borrehoejen.html</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.grundejerforeningen-borrehøj.dk/falkenkaer.html</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.grundejerforeningen-borrehøj.dk/amerika-plantage.html</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.grundejerforeningen-borrehøj.dk/stenredskaber.html</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.grundejerforeningen-borrehøj.dk/logoet.html</loc>
+        <priority>0.6</priority>
+    </url>
+</urlset>
