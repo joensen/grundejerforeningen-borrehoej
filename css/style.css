@@ -232,6 +232,7 @@ article:last-child {
     font-size: 1.8rem;
     color: #333;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .entry-meta {
@@ -276,11 +277,13 @@ article:last-child {
 .entry-content h2 {
     font-size: 1.4rem;
     margin: 1.5em 0 0.5em;
+    text-align: left;
 }
 
 .entry-content h3 {
     font-size: 1.2rem;
     margin: 1.5em 0 0.5em;
+    text-align: left;
 }
 
 .entry-content ul,
