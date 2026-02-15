@@ -42,14 +42,15 @@ $(document).ready(function() {
     // Update copyright year
     $('#copyright-year').text(new Date().getFullYear());
 
-    // Check if event has passed and show message
-    var eventDateText = $('.event-date').text();
-    if (eventDateText) {
-        var months = {
-            'januar': 0, 'februar': 1, 'marts': 2, 'april': 3,
-            'maj': 4, 'juni': 5, 'juli': 6, 'august': 7,
-            'september': 8, 'oktober': 9, 'november': 10, 'december': 11
-        };
+    // Check if events have passed and show message
+    var months = {
+        'januar': 0, 'februar': 1, 'marts': 2, 'april': 3,
+        'maj': 4, 'juni': 5, 'juli': 6, 'august': 7,
+        'september': 8, 'oktober': 9, 'november': 10, 'december': 11
+    };
+    $('.event-date').each(function() {
+        var $date = $(this);
+        var eventDateText = $date.text();
         var match = eventDateText.match(/(\d+)\.\s*(\w+)\s*(\d{4})/);
         if (match) {
             var day = parseInt(match[1]);
@@ -60,9 +61,9 @@ $(document).ready(function() {
             var today = new Date();
             today.setHours(0, 0, 0, 0);
             if (today > eventDate) {
-                $('.event-passed').show();
-                $('.event-date').addClass('passed');
+                $date.closest('.entry-meta').find('.event-passed').show();
+                $date.addClass('passed');
             }
         }
-    }
+    });
 });

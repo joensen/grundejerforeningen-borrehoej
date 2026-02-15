@@ -224,6 +224,11 @@ article:last-child {
     margin-bottom: 0;
 }
 
+article + article {
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
 .entry-header {
     margin-bottom: 20px;
 }
